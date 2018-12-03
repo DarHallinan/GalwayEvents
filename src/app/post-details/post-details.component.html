@@ -1,15 +1,18 @@
 
-<mat-toolbar color="primary">Posts List</mat-toolbar>
+<mat-toolbar color="primary">Events List</mat-toolbar>
 <mat-accordion multi="true" *ngIf="posts.length > 0">
   <mat-expansion-panel [expanded]="true" *ngFor="let post of posts">
     <mat-expansion-panel-header>
       {{ post.title }}
     </mat-expansion-panel-header>
-    <p>{{ post.content }}</p>
+    <p>{{ post.location }}</p>
+    <p>{{ post.time }} | {{ post.date }}</p>
+    <p>€{{ post.price }}</p>
+    <button mat-button  color="warn"><a href="{{post.link}}">Buy Tickets!</a></button>
     <mat-action-row>
       <button mat-button [routerLink]="['/edit', post._id]" color="primary">EDIT</button>
       <button mat-button (click)="onDelete(post._id)" color="warn">DELETE</button>
     </mat-action-row>
   </mat-expansion-panel>
 </mat-accordion>
-<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No posts added yet!</p> 
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No events added yet!</p> 

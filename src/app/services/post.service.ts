@@ -15,8 +15,8 @@ export class PostService {
       return this.http.get("http://localhost:8081/api/posts");
     }
 
-  addPost(title: string, content: string): Observable<any> {
-    const post: Post = {title: title, content: content};
+  addPost(title: string, location: string, time: string, date: string, price: string, link: string): Observable<any> {
+    const post: Post = {title: title, location: location, time: time, date: date, price: price, link: link}
     return this.http.post("http://localhost:8081/api/posts",post);
   }
 
@@ -28,8 +28,8 @@ export class PostService {
     return this.http.get("http://localhost:8081/api/posts/"+id);
   }
 
-  updatePost(id:String, title: string, content: string): Observable<any> {
-    const post: Post = {title: title, content: content};
+  updatePost(id:String, title: string, location: string, time: string, date: string, price: string, link: string): Observable<any> {
+    const post: Post = {title: title, location: location, time: time, date: date, price: price, link: link}
   return this.http.put("http://localhost:8081/api/posts/"+id, post);
   }
 }

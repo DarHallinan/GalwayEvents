@@ -1,4 +1,8 @@
 export interface Post {
-  title: string;
-  content: string;
+  title: String
+  location: String
+  time: String
+  date: String
+  price: String
+  link: String
 }

@@ -14,6 +14,7 @@ import { MatInputModule,
   MatIconModule,
   MatToolbarModule,
   MatExpansionModule} from '@angular/material';
+  import {MatDatepickerModule} from '@angular/material/datepicker';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
 
@@ -49,11 +50,12 @@ const appRoutes: Routes = [
     MatButtonModule,
     BrowserAnimationsModule,
     MatInputModule,
-  MatCardModule,
-  MatButtonModule,
-  MatToolbarModule,
-  MatExpansionModule,
-  MatMenuModule
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatMenuModule
   ],
   providers: [PostService],
   bootstrap: [AppComponent]

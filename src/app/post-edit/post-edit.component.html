@@ -1,29 +1,30 @@
 <mat-card>
   <form (submit)="onEditPost(postForm)" #postForm="ngForm">
-    <mat-form-field>
-      <input
-        matInput
-        type="text"
-        name="title"
-        ngModel={{post.title}}
-        required
-        #title="ngModel"
-        >
-    </mat-form-field>
-    <mat-form-field>
-      <textarea
-        matInput
-        rows="4"
-        name="content"
-        ngModel={{post.content}}
-        required
-        #content="ngModel">
-      </textarea>
-      <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
-    </mat-form-field>
-    <button
-      mat-raised-button
-      color="accent"
-      type="submit">Update Post</button>
+      <mat-form-field>
+          Title:
+          <input matInput type="text" name="title" ngModel required minlength="3" #title="ngModel">
+          <mat-error *ngIf="title.invalid">Please enter an event title</mat-error>
+        </mat-form-field><mat-form-field>
+          Location:
+          <input matInput type="text" name="location" ngModel required #location="ngModel">
+          <mat-error *ngIf="location.invalid">Please enter a venue</mat-error>
+        </mat-form-field><mat-form-field>
+          Time:
+          <input matInput type="text" name="time" ngModel required #time="ngModel">
+          <mat-error *ngIf="time.invalid">Please enter a time</mat-error>
+        </mat-form-field><mat-form-field>
+            Date:
+            <input matInput type="text" name="date" ngModel required minlength="3" #date="ngModel">
+            <mat-error *ngIf="date.invalid">Please enter a date</mat-error>
+          </mat-form-field><mat-form-field>
+          Price:
+          <input matInput type="text" name="price" ngModel required #price="ngModel">
+          <mat-error *ngIf="price.invalid">Please enter a price</mat-error>
+        </mat-form-field><mat-form-field>
+          Link:
+          <input matInput type="text" name="link" ngModel required #link="ngModel">
+          <mat-error *ngIf="link.invalid">Please enter a link to but tickets</mat-error>
+        </mat-form-field>
+    <button mat-raised-buttoncolor="accent" type="submit">Save Post</button>
   </form>
 </mat-card>
